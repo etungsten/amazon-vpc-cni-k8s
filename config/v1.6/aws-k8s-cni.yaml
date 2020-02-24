@@ -126,8 +126,8 @@ spec:
               name: log-dir
             - mountPath: /var/run/docker.sock
               name: dockersock
-            - mountPath: /var/run/dockershim.sock
-              name: dockershim
+            - mountPath: /var/run/cri.sock
+              name: cri
       volumes:
         - name: cni-bin-dir
           hostPath:
@@ -141,7 +141,7 @@ spec:
         - name: dockersock
           hostPath:
             path: /var/run/docker.sock
-        - name: dockershim
+        - name: cri
           hostPath:
             path: /var/run/dockershim.sock
 
